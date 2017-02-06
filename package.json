@@ -1,0 +1,27 @@
+{
+  "name": "bit-docs-donejs-theme",
+  "version": "0.0.1",
+  "description": "DoneJS bit-docs theme",
+  "main": "static/static",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/donejs/bit-docs-donejs-theme.git"
+  },
+  "author": "Bitovi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/donejs/bit-docs-donejs-theme/issues"
+  },
+  "homepage": "https://github.com/donejs/bit-docs-donejs-theme#readme",
+  "devDependencies": {
+    "bit-docs-generate-html": "^0.3.6"
+  },
+  "dependencies": {
+		"can": "2.3.28",
+    "dotdotdot": "^1.7.0",
+		"jquery": "2.2.4"
+  }
+}
