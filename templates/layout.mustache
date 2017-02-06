@@ -67,12 +67,12 @@
 					</div>
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav">
-							<li><a href="./index.html">Home</a></li>
-							<li><a href="./Features.html">Features</a></li>
-							<li><a href="./About.html">About</a></li>
-							<li><a href="./Apis.html">Apis</a></li>
+							<li {{#ifEqual name "donejs"}}class="active"{{/ifEqual}}><a href="./index.html">Home</a></li>
+							<li {{#ifEqual name "Features"}}class="active"{{/ifEqual}}><a href="./Features.html">Features</a></li>
+							<li {{#ifEqual name "About"}}class="active"{{/ifEqual}}><a href="./About.html">About</a></li>
+							<li {{#ifEqual name "Apis"}}class="active"{{/ifEqual}}><a href="./Apis.html">Apis</a></li>
 
-							<li class="guides-menu">
+							<li class="guides-menu{{#ifEqual name "Guides"}} active{{/ifEqual}}">
 								<a href="./Guides.html">Guides</a>
 								<ul class="dropdown-menu">
 									<li><a href="./SettingUp.html">Setting Up</a></li>
@@ -84,7 +84,7 @@
 								</ul>
 							</li>
 
-							<li>
+							<li {{#ifEqual name "community"}}class="active"{{/ifEqual}}>
 								<a href="./community.html">Community</a>
 							</li>
 						</ul>
