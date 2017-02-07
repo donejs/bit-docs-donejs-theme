@@ -4,7 +4,10 @@
   "description": "DoneJS bit-docs theme",
   "main": "static/static",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postversion": "git push --tags && git push",
+    "release:patch": "npm version patch && npm publish",
+    "release:minor": "npm version minor && npm publish",
+    "release:major": "npm version major && npm publish"
   },
   "repository": {
     "type": "git",
@@ -20,8 +23,7 @@
     "bit-docs-generate-html": "^0.3.6"
   },
   "dependencies": {
-		"can": "2.3.28",
     "dotdotdot": "^1.7.0",
-		"jquery": "2.2.4"
+    "jquery": "2.2.4"
   }
 }

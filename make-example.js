@@ -13,19 +13,18 @@ var docMap = new Promise(function(resolve, reject) {
 });
 
 generate(docMap, {
-	html: {
-		templates: path.join(__dirname, "templates"),
-		dependencies: {
-			"can": "2.3.28",
-			"bit-docs-donejs-theme": __dirname
-		}
-	},
-	dest: path.join(__dirname, "site"),
-	parent: "donejs",
-	forceBuild: process.argv.includes("-f"),
-	minifyBuild: false,
-	debug: true
-})
-.catch(function(error) {
-	console.error(error);
+  html: {
+    templates: path.join(__dirname, "templates"),
+    dependencies: {
+      can: "2.3.28",
+      "bit-docs-donejs-theme": __dirname
+    }
+  },
+  dest: path.join(__dirname, "site"),
+  parent: "donejs",
+  forceBuild: process.argv.includes("-f"),
+  minifyBuild: false,
+  debug: true
+}).catch(function(error) {
+  console.error(error);
 });
