@@ -16,7 +16,6 @@ generate(docMap, {
   html: {
     templates: path.join(__dirname, "templates"),
     dependencies: {
-      can: "2.3.28",
       "bit-docs-donejs-theme": __dirname
     }
   },
