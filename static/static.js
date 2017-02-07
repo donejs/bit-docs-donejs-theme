@@ -377,7 +377,7 @@ $("body:not(.donejs):not(.community)").find("h3, h4, h5").each(function() {
     this.id = prevId + "__" + $(this).text().replace(/[^a-z0-9]/gi, "");
   }
   var html = "<a class='linkToHeader' href='#section=" + this.id + "'>";
-  html += "<img src='/static/img/link.svg'>";
+  html += "<img src='static/img/link.svg'>";
   html += "</a>";
   $(this).prepend(html);
 });

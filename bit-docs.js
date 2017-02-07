@@ -1,5 +1,5 @@
 var path = require("path");
-var assign = require("object-assign");
+var assign = require("./assign");
 
 module.exports = function(bitDocs) {
   var pkg = require("./package.json");
@@ -15,3 +15,5 @@ module.exports = function(bitDocs) {
     dependencies: dependencies
   });
 };
+
+
