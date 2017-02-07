@@ -23,19 +23,19 @@
 	<meta name="author" content="Bitovi - DoneJS">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="apple-touch-icon" sizes="57x57" href="../static/img/favicons/apple-touch-icon-57x57.png">
-	<link rel="apple-touch-icon" sizes="60x60" href="../static/img/favicons/apple-touch-icon-60x60.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="../static/img/favicons/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="../static/img/favicons/apple-touch-icon-76x76.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="../static/img/favicons/apple-touch-icon-114x114.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="../static/img/favicons/apple-touch-icon-120x120.png">
-	<link rel="apple-touch-icon" sizes="144x144" href="../static/img/favicons/apple-touch-icon-144x144.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="../static/img/favicons/apple-touch-icon-152x152.png">
-	<link rel="apple-touch-icon" sizes="180x180" href="../static/img/favicons/apple-touch-icon-180x180.png">
-	<link rel="icon" type="image/png" href="../static/img/favicons/favicon-32x32.png" sizes="32x32">
-	<link rel="icon" type="image/png" href="../static/img/favicons/android-chrome-192x192.png" sizes="192x192">
-	<link rel="icon" type="image/png" href="../static/img/favicons/favicon-96x96.png" sizes="96x96">
-	<link rel="icon" type="image/png" href="../static/img/favicons/favicon-16x16.png" sizes="16x16">
+	<link rel="apple-touch-icon" sizes="57x57" href="static/img/favicons/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="static/img/favicons/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="static/img/favicons/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="static/img/favicons/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="static/img/favicons/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="static/img/favicons/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="static/img/favicons/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="static/img/favicons/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="static/img/favicons/apple-touch-icon-180x180.png">
+	<link rel="icon" type="image/png" href="static/img/favicons/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="static/img/favicons/android-chrome-192x192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="static/img/favicons/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="static/img/favicons/favicon-16x16.png" sizes="16x16">
 	{{#unless devBuild}}
 		<link rel="stylesheet" type="text/css" href="{{pathToDest}}/static/bundles/bit-docs-site/static.css">
 	{{/unless}}
@@ -46,7 +46,7 @@
 		<header>
 			<nav class="navbar navbar-default navbar-fixed-top">
 				<div class="container">
-					<!-- Brand and toggle get grouped for better mobile display -->
+					<!-- Brand and toggle get grouped for betteor mobile display -->
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 							<span class="sr-only">Toggle navigation</span>
@@ -106,31 +106,31 @@
 						<ul class="menu-lib-logos hidden-sm hidden-md hidden-lg">
 							<li>
 								<a href="#">
-									<img class="logo-canjs" src="/static/img/lib-logos/canjs_logo.svg" />
+									<img class="logo-canjs" src="static/img/lib-logos/canjs_logo.svg" />
 									<span class="logo-label">CanJS</span>
 								</a>
 							</li>
 							<li>
 								<a href="#">
-									<img class="logo-stealjs" src="/static/img/lib-logos/stealjs-logo.svg" />
+									<img class="logo-stealjs" src="static/img/lib-logos/stealjs-logo.svg" />
 									<span class="logo-label">StealJS</span>
 								</a>
 							</li>
 							<li>
 								<a href="#">
-									<img class="logo-jqueryplus" src="/static/img/lib-logos/jquery-plusplus-logo.svg" />
+									<img class="logo-jqueryplus" src="static/img/lib-logos/jquery-plusplus-logo.svg" />
 									<span class="logo-label">jQuery++</span>
 								</a>
 							</li>
 							<li>
 								<a href="#">
-									<img class="logo-funcunit" src="/static/img/lib-logos/funcunit-logo.svg" />
+									<img class="logo-funcunit" src="static/img/lib-logos/funcunit-logo.svg" />
 									<span class="logo-label">FuncUnit</span>
 								</a>
 							</li>
 							<li>
 								<a href="#">
-									<img class="logo-docjs" src="/static/img/lib-logos/documentjs-logo.svg" />
+									<img class="logo-docjs" src="static/img/lib-logos/documentjs-logo.svg" />
 									<span class="logo-label">DocumentJS</span>
 								</a>
 							</li>
@@ -142,7 +142,8 @@
 		</header>
 
 	<div class="scroll-spy-title hidden-md hidden-lg">
-		<span class="menu-indicator menus-closed"></span>
+    <span class="menu-indicator menus-closed"></span>
+    <div style="display: none;" class="on-this-page-container"></div>
 		<div id="scrollSpyCurrentH2" class="h2Only">Table of Contents</div>
 		<div id="scrollSpyCurrentH3"></div>
 	</div>
@@ -153,7 +154,7 @@
 			<div class="row">
 				<div class="col-xs-12 col-sm-8">
 					<div class="col-xs-1 footer-brand">
-						<a href="/"><img src="/static/img/donejs-logo-final-02.svg"></a>
+						<a href="/"><img src="static/img/donejs-logo-final-02.svg"></a>
 					</div>
 
 					<ul class="footer-nav-main list-stacked">
@@ -181,22 +182,22 @@
 					<ul class="footer-nav-social list-stacked">
 						<li>
 							<a href="https://github.com/donejs">
-								<img class="footer-social-icon" src="/static/img/icon-github-white.svg">
+								<img class="footer-social-icon" src="static/img/icon-github-white.svg">
 							</a>
 						</li>
 						<li>
 							<a href="https://twitter.com/donejs">
-								<img class="footer-social-icon" src="/static/img/icon-twitter-white.svg">
+								<img class="footer-social-icon" src="static/img/icon-twitter-white.svg">
 							</a>
 						</li>
 						<li>
 							<a href="https://plus.google.com/+Bitovi/posts">
-								<img class="footer-social-icon" src="/static/img/icon-googleplus-white.svg">
+								<img class="footer-social-icon" src="static/img/icon-googleplus-white.svg">
 							</a>
 						</li>
 						<li>
 							<a href="https://www.youtube.com/channel/UC_HPFLeKzJNLOUnLc_3311Q/videos">
-								<img class="footer-social-icon" src="/static/img/icon-youtube-white.svg">
+								<img class="footer-social-icon" src="static/img/icon-youtube-white.svg">
 							</a>
 						</li>
 					</ul>

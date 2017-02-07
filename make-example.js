@@ -1,5 +1,5 @@
-var fs = require("fs");
 var path = require("path");
+var fs = require("fs-extra");
 var generate = require("bit-docs-generate-html/generate");
 
 var docMap = new Promise(function(resolve, reject) {
@@ -16,6 +16,7 @@ generate(docMap, {
   html: {
     templates: path.join(__dirname, "templates"),
     dependencies: {
+      "can": "2.3.28",
       "bit-docs-donejs-theme": __dirname
     }
   },
@@ -24,6 +25,16 @@ generate(docMap, {
   forceBuild: process.argv.includes("-f"),
   minifyBuild: false,
   debug: true
-}).catch(function(error) {
-  console.error(error);
+})
+.then(function() {
+  fs.copySync(
+    path.join(__dirname, "static", "img"),
+    path.join(__dirname, "site", "static", "img")
+  );
+})
+.then(function() {
+  console.log("DONE!");
+})
+.catch(function(error) {
+  console.log("FAILED: ", error);
 });
