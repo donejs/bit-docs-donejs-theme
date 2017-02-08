@@ -1,8 +1,8 @@
 var $ = require("jquery");
-var ContentList = require("./content_list");
-var FrameHelper = require("./frame_helper");
 var Versions = require("./versions");
+var FrameHelper = require("./frame_helper");
 var Highlighter = require("./js/line-highlight");
+var handlePageAnchors = require("./handle-page-anchors");
 
 require("./js/collapse");
 require("./js/dropdown");
@@ -26,13 +26,15 @@ for (var i = 0; i < codes.length; i++) {
 
 prettyPrint();
 
-new ContentList(".contents");
 new FrameHelper(".docs");
 new Versions($("#versions, .sidebar-title:first"));
 
 $("textarea").click(function() {
   this.select();
 });
+
+// perform a smooth page scroll to anchors on the same page
+$(handlePageAnchors);
 
 if ($(".twitter-follow-button").length) {
   // replace the "Follow @canjs!" link with a little wiget with follower count.
@@ -194,20 +196,6 @@ var getNavToHeaderEl = function(hEl) {
   return $("section.contents a[href*='" + id + "']");
 };
 
-$("section.comment h3").each(function() {
-  //fix duplicate id problem
-  var ids = $('[id="' + this.id + '"]');
-  if (ids.length > 1 && ids[0] === this) {
-    var navTo = getNavToHeaderEl(ids);
-    ids.each(function(x, el) {
-      var aEl = navTo.get(x);
-      aEl.href = aEl.href.replace(el.id, el.id + x);
-
-      el.id = el.id + x;
-    });
-  }
-});
-
 var getSpyableElementFromPoint = (function() {
   var lastElAtPoint, x, y;
   var fromThese = $("section.comment > *");
@@ -367,76 +355,30 @@ $(window).scroll(function() {
   }
 });
 
-$("body:not(.donejs):not(.community)").find("h3, h4, h5").each(function() {
-  if (!this.id) {
-    var tag = this.tagName.toLowerCase();
-    var prevTag = "h" + (parseInt(tag.replace(/h(\d)/, "$1")) - 1);
-    var prevEl = $(this).prevAll(prevTag).get(0);
-    var prevId = prevEl ? prevEl.id : "";
-
-    this.id = prevId + "__" + $(this).text().replace(/[^a-z0-9]/gi, "");
-  }
-  var html = "<a class='linkToHeader' href='#section=" + this.id + "'>";
-  html += "<img src='static/img/link.svg'>";
-  html += "</a>";
-  $(this).prepend(html);
-});
-
-//hijack guide page jumps, animate scroll
+// hijack guide page jumps, animate scroll
 $(function() {
-  var clickFn = function() {
+  $("section.contents a").on("click", function(evt) {
     var thisLi = $(this).closest("li");
+
     if ($("section.contents").is(".active") && thisLi.is("ol > li > ol > li")) {
       $(".scroll-spy-title").click();
     }
-  };
-
-  $("section.contents a").each(function() {
-    this.href = this.href.replace("#", "#section=");
-
-    $(this).on("click", clickFn);
-
-    return true;
   });
 
   var hashOnLoad = window.location.hash;
-  if (hashOnLoad) {
-    var jumpTo = hashOnLoad.replace(/.*?#section=/, "#");
-    if ($(jumpTo).length) {
-      var offset = -55;
-      $("html, body").animate(
-        {
-          scrollTop: $(jumpTo).offset().top + offset
-        },
-        500
-      );
-    }
-  }
-});
+  var $jumpTo = $(hashOnLoad);
 
-window.addEventListener(
-  "hashchange",
-  function(hashChangeEvent) {
+  if (hashOnLoad && $jumpTo.length) {
     var offset = -55;
-    var newHash = hashChangeEvent.newURL.replace(/.*?(#.*)/g, "$1");
-
-    if (newHash.indexOf("#section=") === -1) return;
-
-    var jumpTo = newHash.replace(/.*?#section=/, "#");
-    var distance = Math.abs(
-      $("body").scrollTop() - ($(jumpTo).offset().top + offset)
-    );
-    var duration = Math.max(500, distance / 6000 * 250);
 
     $("html, body").animate(
       {
-        scrollTop: $(jumpTo).offset().top + offset
+        scrollTop: $jumpTo.offset().top + offset
       },
-      duration
+      500
     );
-  },
-  false
-);
+  }
+});
 
 $(window).scroll(function() {
   if (!isMobileSize) return;
