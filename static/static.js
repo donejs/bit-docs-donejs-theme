@@ -33,8 +33,19 @@ $("textarea").click(function() {
   this.select();
 });
 
-// perform a smooth page scroll to anchors on the same page
-$(handlePageAnchors);
+$(function() {
+  // perform a smooth page scroll to anchors on the same page
+  handlePageAnchors();
+
+  // collapse table of contents headings for certain pages
+  var doJQCollapsing = $("body.Guide, body.place-my-order, body.Apis").length
+    ? true
+    : false;
+
+  if (doJQCollapsing) {
+    $("section.contents ol ol").hide();
+  }
+});
 
 if ($(".twitter-follow-button").length) {
   // replace the "Follow @canjs!" link with a little wiget with follower count.
@@ -221,13 +232,7 @@ var getSpyableElementFromPoint = (function() {
 var scrollSpyCurrentH2 = $("#scrollSpyCurrentH2");
 var scrollSpyCurrentH3 = $("#scrollSpyCurrentH3");
 var activeH2Li = $();
-var doJQCollapsing = $("body.Guide, body.place-my-order, body.Apis").length
-  ? true
-  : false;
 
-if (doJQCollapsing) {
-  $("section.contents ol ol").hide();
-}
 
 var disableBodyScroll = [];
 var setBodyScroll = function() {
@@ -293,10 +298,10 @@ $("#greyOutUnderNav").click(function() {
 var lastH3 = null;
 var bounceAnimTO = null;
 $(window).scroll(function() {
-  //if ( scrollPosOnMenuOpen > -1 ) {
-  //    $( 'html, body' ).scrollTop( scrollPosOnMenuOpen );
-  //    return;
-  //}
+  var doJQCollapsing = $("body.Guide, body.place-my-order, body.Apis").length
+    ? true
+    : false;
+
   var el = $(
     getSpyableElementFromPoint(~~(document.body.offsetWidth / 2), 250)
   );
