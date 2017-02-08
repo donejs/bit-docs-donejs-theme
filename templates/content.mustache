@@ -31,10 +31,13 @@ rendering the "regular" content }}
 			</section>
 			{{/unless}}
 
-			{{#unless hideArticle}}
-			<section class="contents on-this-page-container">
-			</section>
-			{{/unless}}
+      {{#unless hideArticle}}
+      <section
+        class="contents on-this-page-container"
+        data-headings-container-selector=".content .comment"
+        >
+      </section>
+      {{/unless}}
 
 			{{#if deprecated.length}}
 				<section class='warnings'>
