@@ -77,8 +77,8 @@ module.exports = function() {
   function anchorTemplate(ctx) {
     var id = encodeURIComponent(ctx.id);
 
-    return '<a class="linkToHeader" href="#s' +
-      this.id +
+    return '<a class="linkToHeader" href="#' +
+      id +
       '">' +
       '<img src="static/img/link.svg">' +
       "</a>";
