@@ -1,6 +1,6 @@
 {
   "name": "bit-docs-donejs-theme",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "DoneJS bit-docs theme",
   "main": "static/static",
   "scripts": {
