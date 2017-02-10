@@ -1,7 +1,5 @@
 var $ = require("jquery");
 var Versions = require("./versions");
-var FrameHelper = require("./frame_helper");
-var Highlighter = require("./js/line-highlight");
 var handlePageAnchors = require("./handle-page-anchors");
 
 require("./js/collapse");
@@ -13,20 +11,7 @@ require("./js/lazy-youtube");
 require("./js/affix");
 require("./js/upcoming-events/upcoming-events");
 require("./styles/styles.less!");
-require("./prettify");
 
-var codes = document.getElementsByTagName("code");
-
-for (var i = 0; i < codes.length; i++) {
-  var code = codes[i];
-  if (code.parentNode.nodeName.toUpperCase() === "PRE") {
-    code.className = code.className + " prettyprint";
-  }
-}
-
-prettyPrint();
-
-new FrameHelper(".docs");
 new Versions($("#versions, .sidebar-title:first"));
 
 $("textarea").click(function() {
@@ -589,8 +574,6 @@ $(function() {
       }
     });
   }
-
-  Highlighter();
 });
 
 $("#bithub-events-embed").upcomingEvents({
