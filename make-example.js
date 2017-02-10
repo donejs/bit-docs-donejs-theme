@@ -20,13 +20,13 @@ generate(docMap, {
       "bit-docs-prettify": "^0.1.0",
       "bit-docs-html-highlight-line": "^0.2.2",
       "bit-docs-donejs-theme": __dirname,
-      "bit-docs-html-toc": "^0.6.1"
+      "bit-docs-html-toc": "^0.6.2"
     }
   },
   dest: path.join(__dirname, "site"),
   parent: "donejs",
   forceBuild: process.argv.includes("-f"),
-  minifyBuild: false,
+  minifyBuild: true,
   debug: true
 })
 .then(function() {
