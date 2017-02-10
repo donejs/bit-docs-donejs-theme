@@ -1,6 +1,5 @@
 var $ = require("jquery");
 var Versions = require("./versions");
-var FrameHelper = require("./frame_helper");
 var handlePageAnchors = require("./handle-page-anchors");
 
 require("./js/collapse");
@@ -13,7 +12,6 @@ require("./js/affix");
 require("./js/upcoming-events/upcoming-events");
 require("./styles/styles.less!");
 
-new FrameHelper(".docs");
 new Versions($("#versions, .sidebar-title:first"));
 
 $("textarea").click(function() {
