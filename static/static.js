@@ -456,7 +456,8 @@ $(window).scroll(function() {
       .removeClass("active");
   }
 });
-//hijack home page page jumps, animate scroll
+
+// hijack home page page jumps, animate scroll
 $(function() {
   $(".triptych .box").click(function() {
     var offset = -140;
@@ -474,7 +475,8 @@ $(function() {
 
   var clickFn = function() {
     var offset = -140;
-    var jumpto = this.href.replace(/.*?#section=/, "#");
+    var jumpto = this.hash;
+
     if (jumpto === "#performance") {
       offset = -95;
     }
@@ -490,17 +492,11 @@ $(function() {
   var jumpOnLoad = null;
 
   $(".overview-nav a").each(function() {
-    this.href = this.href.replace("#", "#section=");
-
-    if (
-      hashOnLoad &&
-        this.href.replace(/.*?#section=/, "#section=") === hashOnLoad
-    ) {
+    if (hashOnLoad && this.hash === hashOnLoad) {
       jumpOnLoad = this;
     }
 
     $(this).on("click", clickFn);
-
     return true;
   });
 
