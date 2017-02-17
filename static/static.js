@@ -21,7 +21,7 @@ $(function() {
   handlePageAnchors();
 
   // collapse table of contents headings for certain pages
-  var doJQCollapsing = $("body.Guide, body.place-my-order, body.Apis, body.contribute").length
+  var doJQCollapsing = $("body.Guide, body.place-my-order, body.Apis, body.contributing").length
     ? true
     : false;
 
