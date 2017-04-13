@@ -183,28 +183,31 @@
 					<ul class="footer-nav-social list-stacked">
 						<li>
 							<a href="https://github.com/donejs">
-								<img class="footer-social-icon" src="static/img/icon-github-white.svg">
+								<img class="footer-social-icon" src="static/img/icon-github-white.svg" alt="Github">
 							</a>
 						</li>
 						<li>
 							<a href="https://twitter.com/donejs">
-								<img class="footer-social-icon" src="static/img/icon-twitter-white.svg">
+								<img class="footer-social-icon" src="static/img/icon-twitter-white.svg" alt="Twitter">
 							</a>
 						</li>
 						<li>
 							<a href="https://plus.google.com/+Bitovi/posts">
-								<img class="footer-social-icon" src="static/img/icon-googleplus-white.svg">
+								<img class="footer-social-icon" src="static/img/icon-googleplus-white.svg" alt="Google+">
 							</a>
 						</li>
 						<li>
 							<a href="https://www.youtube.com/channel/UC_HPFLeKzJNLOUnLc_3311Q/videos">
-								<img class="footer-social-icon" src="static/img/icon-youtube-white.svg">
+								<img class="footer-social-icon" src="static/img/icon-youtube-white.svg" alt="YouTube">
 							</a>
 						</li>
 					</ul>
 				</div>
 				<div class="footer-copyright col-sm-12">
-					&copy; <a href="http://www.bitovi.com">2015 Bitovi, Inc.</a>
+					&copy; <a href="http://www.bitovi.com"><span id="footer-copyright-year">2017</span> Bitovi, Inc.</a>
+					<script type="text/javascript">
+						document.getElementById("footer-copyright-year").innerText = (new Date()).getFullYear();
+					</script>
 				</div>
 			</div>
 		</div>
