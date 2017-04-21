@@ -574,6 +574,3 @@ $("#bithub-events-embed").upcomingEvents({
   apiKey: "AIzaSyBsNpdGbkTsqn1BCSPQrjO9OaMySjK5Sns",
   calendarId: "jupiterjs.com_g27vck36nifbnqrgkctkoanqb4@group.calendar.google.com"
 });
-
-// Set year in footer copyright link
-$('.footer-copyright .end-year').text(new Date().getFullYear());
