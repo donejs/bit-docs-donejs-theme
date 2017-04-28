@@ -233,7 +233,7 @@ var setBodyScroll = function() {
 };
 
 var scrollPosOnMenuOpen = -1;
-$(".scroll-spy-title").on("click", function() {
+$(".scroll-spy-title").on("click", function(e) {
   var menu = $("section.contents");
   if (menu.is(".active")) {
     menu.removeClass("active");
@@ -280,7 +280,24 @@ $("#greyOutUnderNav").click(function() {
 
 var lastH3 = null;
 var bounceAnimTO = null;
-$(window).scroll(function() {
+var debounce = false;
+var deferred = false;
+$(window).scroll(function(e) {
+  // HACK: This is bad. But I can't figure out a cleaner solution without a major refactor
+  // See issue https://github.com/donejs/bit-docs-donejs-theme/issues/48
+  if(debounce){
+    deferred = true;
+    return;
+  }
+  debounce = true;
+  setTimeout(function(){
+    debounce = false;
+    if(deferred){
+      deferred = false;
+      $(window).scroll();
+    }
+  }, 500);
+
   var doJQCollapsing = $("body.Guide, body.place-my-order, body.Apis").length
     ? true
     : false;

@@ -26,7 +26,7 @@ generate(docMap, {
   dest: path.join(__dirname, "site"),
   parent: "donejs",
   forceBuild: process.argv.includes("-f"),
-  minifyBuild: true,
+  minifyBuild: false,
   debug: true
 })
 .then(function() {
