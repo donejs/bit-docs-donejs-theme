@@ -282,7 +282,7 @@ var lastH3 = null;
 var bounceAnimTO = null;
 var debounce = false;
 var deferred = false;
-$(window).scroll(function(e) {
+$(window).scroll(function() {
   // HACK: This is bad. But I can't figure out a cleaner solution without a major refactor
   // See issue https://github.com/donejs/bit-docs-donejs-theme/issues/48
   if(debounce){
