@@ -1,6 +1,6 @@
 var $ = require("jquery");
 var handlePageAnchors = require("./handle-page-anchors");
-
+var Debounce = require('./js/debounce');
 require("./js/collapse");
 require("./js/dropdown");
 require("./js/tooltip");
@@ -280,24 +280,10 @@ $("#greyOutUnderNav").click(function() {
 
 var lastH3 = null;
 var bounceAnimTO = null;
-var debounce = false;
-var deferred = false;
-$(window).scroll(function(e) {
-  // HACK: This is bad. But I can't figure out a cleaner solution without a major refactor
-  // See issue https://github.com/donejs/bit-docs-donejs-theme/issues/48
-  if(debounce){
-    deferred = true;
-    return;
-  }
-  debounce = true;
-  setTimeout(function(){
-    debounce = false;
-    if(deferred){
-      deferred = false;
-      $(window).scroll();
-    }
-  }, 500);
 
+// HACK: This debounce is bad but I can't figure out a cleaner solution without a major refactor
+// See issue https://github.com/donejs/bit-docs-donejs-theme/issues/48
+$(window).scroll(new Debounce(function(e) {
   var doJQCollapsing = $("body.Guide, body.place-my-order, body.Apis").length
     ? true
     : false;
@@ -358,7 +344,7 @@ $(window).scroll(function(e) {
     activeH2Li.addClass("active");
     if (doJQCollapsing) activeH2Li.find("ol").show(250);
   }
-});
+}, 500));
 
 // hijack guide page jumps, animate scroll
 $(function() {
