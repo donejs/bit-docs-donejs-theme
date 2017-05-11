@@ -1,17 +1,17 @@
 module.exports = function Debounce(fn, wait){
     var self = this;
-    this.debounce = false;
-    this.deferred = false;
+    var debounce = false;
+    var deferred = false;
     return function(){
-        if(self.debounce){
-          self.deferred = true;
+        if(debounce){
+          deferred = true;
           return;
         }
-        self.debounce = true;
+        debounce = true;
         setTimeout((function(){
-            self.debounce = false;
-            if(self.deferred){
-                self.deferred = false;
+            debounce = false;
+            if(deferred){
+                deferred = false;
                 fn.apply(this, arguments);
             }
         }).bind(this), wait || 500);

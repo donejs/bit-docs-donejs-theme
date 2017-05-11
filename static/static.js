@@ -1,6 +1,6 @@
 var $ = require("jquery");
 var handlePageAnchors = require("./handle-page-anchors");
-var Debounce = require('./js/debounce');
+var debounce = require('./js/debounce');
 require("./js/collapse");
 require("./js/dropdown");
 require("./js/tooltip");
@@ -283,7 +283,7 @@ var bounceAnimTO = null;
 
 // HACK: This debounce is bad but I can't figure out a cleaner solution without a major refactor
 // See issue https://github.com/donejs/bit-docs-donejs-theme/issues/48
-$(window).scroll(new Debounce(function(e) {
+$(window).scroll(debounce(function(e) {
   var doJQCollapsing = $("body.Guide, body.place-my-order, body.Apis").length
     ? true
     : false;
