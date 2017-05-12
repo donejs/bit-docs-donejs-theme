@@ -1,5 +1,4 @@
 module.exports = function Debounce(fn, wait){
-    var self = this;
     var debounce = false;
     var deferred = false;
     return function(){
