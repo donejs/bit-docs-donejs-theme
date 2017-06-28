@@ -48,16 +48,33 @@ module.exports = function(littlePromise, options){
 * ```
 *
 **/
+
 code {
 	background-color: @colorCode;
   border-radius: 5px;
   padding: 0 5px;
 }
+
 pre, code, pre *, code * {
 	font-family: "Courier New", Courier, mono;
   font-style: normal;
-  font-weight: 300; 
+  font-weight: 400;
+  font-size: 15px;
+  -webkit-font-smoothing: initial;
+  .highlight {
+    background-color: #e5f6e5;
+    padding: 3px 0;
+  }
+  .atv {
+    color: #A94442;
+  }
+  @media(max-width: @screen-xs-max){
+    font-size:12px;
+    line-height:1;
+  }
 }
+
+
 pre {
   background-color: @clear;
   border: 1px solid @haze;
@@ -73,6 +90,36 @@ pre {
   	line-height: 16px;
   	letter-spacing: 0px;
   	background-color: transparent;
+    & > span {
+      white-space: normal;
+      display: block;
+      .pln {
+        white-space: pre;
+      }
+    }
+    .obscured {
+      background: lighten(@gray-lighter, 2%);
+    }
+    .expand {
+      background-color: @gray-lighter;
+      text-align: center;
+      padding: 4px 0px;
+      margin: @grid-gutter-width/2 0;
+      border-top: 1px solid @haze;
+      border-bottom: 1px solid @haze;
+      color: black;
+    }
+    .expand:before {
+      content: url(../img/expand_icon.svg);
+      display: block;
+      width: 15px;
+      height: 15px;
+      margin: 0 auto;
+    }
+    .expand:hover {
+      opacity: .6;
+      cursor: pointer;
+    }
   }
   
   ol {
@@ -97,6 +144,7 @@ pre {
 
 code.prettyprint {
     padding:0 !Important;
+    display: inline-block;
 }
 
 .pln {
