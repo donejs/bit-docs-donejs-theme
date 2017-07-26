@@ -27,6 +27,7 @@
   "dependencies": {
     "can": "2.3.28",
     "dotdotdot": "^1.7.0",
-    "jquery": "2.2.4"
+    "jquery": "2.2.4",
+    "lodash.debounce": "^4.0.8"
   }
 }
