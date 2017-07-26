@@ -1,6 +1,6 @@
 var $ = require("jquery");
 var handlePageAnchors = require("./handle-page-anchors");
-var debounce = require('./js/debounce');
+var debounce = require('lodash.debounce');
 require("./js/collapse");
 require("./js/dropdown");
 require("./js/tooltip");
@@ -344,7 +344,7 @@ $(window).scroll(debounce(function(e) {
     activeH2Li.addClass("active");
     if (doJQCollapsing) activeH2Li.find("ol").show(250);
   }
-}, 500));
+}, 10));
 
 // hijack guide page jumps, animate scroll
 $(function() {
