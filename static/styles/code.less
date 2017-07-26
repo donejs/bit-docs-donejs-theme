@@ -4,12 +4,12 @@
 *
 * @description
 * Enables both the layout of code wells, and also the syntax highlighting of the specific code language. Syntax coloring provided by prettify.js with the <a href="https://github.com/chriskempson/tomorrow-theme">Tomorrow Theme</a>.
-* 
+*
 * Code "wells" are styled based on the use of the `<pre>` and `<code>` tags around your desired code example.
 *
-* Below are a few examples in various languages. This is not an exhaustive list of supported languages. 
+* Below are a few examples in various languages. This is not an exhaustive list of supported languages.
 *
-* ### HTML 
+* ### HTML
 * ```
 * <pre>
     <code>
@@ -27,11 +27,11 @@ var foo = require('f'),
     bar = require('br'),
     writeFile = f.denodify(br.writeFile),
     path = require('path');
-    
+
 module.exports = function(littlePromise, options){
    return littlePromise.then(function(little){
      return writeFile(
-         path.join(options.dest,'little.json'), 
+         path.join(options.dest,'little.json'),
          JSON.stringify(little) );
    });
 };
@@ -55,8 +55,14 @@ code {
 }
 pre, code, pre *, code * {
 	font-family: "Courier New", Courier, mono;
+	font-size: 15px;
   font-style: normal;
-  font-weight: 300; 
+  font-weight: 400;
+  -webkit-font-smoothing: initial;
+  @media(max-width: @screen-xs-max){
+    font-size: 12px;
+    line-height: 1;
+  }
 }
 pre {
   background-color: @clear;
@@ -66,19 +72,55 @@ pre {
   margin-bottom: 20px;
   vertical-align: top;
   overflow:auto;
-  padding: 10px 20px;
-  
+  padding: 0;
+
   code{
   	font-size: 14px;
-  	line-height: 16px;
+  	line-height: 20px;
   	letter-spacing: 0px;
   	background-color: transparent;
+		display: block;
+		margin: 15px;
+
+    &.line-highlight {
+      display: inline-block;
+      min-width: 100%;
+    }
+
+    .highlight {
+      background-color: #e5f6e5;
+      display: block;
+      padding: 3px 0;
+    }
+    .obscured{
+      background: lighten(@gray-lighter, 2%);
+    }
+    .expand {
+      background-color: @gray-lighter;
+      text-align: center;
+      padding: 4px 0px;
+      margin: @grid-gutter-width/4 0;
+      border-top: 1px solid @haze;
+      border-bottom: 1px solid @haze;
+      color: black;
+    }
+    .expand:before {
+      content: url(../img/expand_icon.svg);
+      display: block;
+      width: 15px;
+      height: 15px;
+      margin: 0 auto;
+    }
+    .expand:hover{
+      opacity: .6;
+      cursor: pointer;
+    }
   }
-  
+
   ol {
   	margin: 0 0 0 40px;
   	padding: 0;
-  	
+
   	li {
   		text-indent: 0;
   		color: @darkSkies;
@@ -97,6 +139,14 @@ pre {
 
 code.prettyprint {
     padding:0 !Important;
+}
+
+.line-highlight {
+  margin: 15px 0;
+  span.line {
+    display: block;
+		padding: 0 15px;
+  }
 }
 
 .pln {
