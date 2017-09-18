@@ -115,7 +115,7 @@ $(".usability-dl-options").hover(
 );
 
 //set Guides as active in main navigation if nothing else is active
-if ($(".navbar-nav:first > .active").length === 0) {
+if ($(".navbar-nav:first > .active").length === 0 && window.docObject && window.docObject.parent === 'Guides') {
   $(".guides-menu").addClass("active");
 }
 
@@ -570,6 +570,19 @@ $(function() {
         }
       }
     });
+  }
+
+  // Scroll down to the survey submission response
+  if (window.location.search.indexOf('submissionGuid') > -1) {
+    // Wait until the HubSpot Forms script has loaded
+    setTimeout(function() {
+      var submittedMessage = document.querySelector('.submitted-message');
+      if (submittedMessage) {
+        submittedMessage.scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
+    }, 200);
   }
 });
 
