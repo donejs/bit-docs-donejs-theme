@@ -1,0 +1,46 @@
+/* This file is for styles that apply specifically to the "survey.html" landing page */
+@import 'no-sidebar-page-body.less';
+
+/* This selector is so specific because it has to override some other styles :( */
+body.survey:not(.other) {
+	.no-sidebar-page-body;
+
+	.hbspt-form {
+		.submitted-message {
+			font-size: @font-size-large;
+			font-weight: bold;
+			margin: 3 * @padding-large-vertical 0;
+			text-align: center;
+		}
+	}
+
+	.hs-form {
+		margin: 3 * @padding-large-vertical auto;
+		max-width: @contentWidth / 2;// Max width for desktop
+		width: 100%;// Max width for mobile
+
+		.hs-button.primary,
+		input[type="submit"],
+		input[type="button"] {
+			.button;
+		}
+		input {
+			width: 100%;
+		}
+		label span {
+			font-size: 16px;
+			font-weight: bold;
+		}
+		.hs-error-msgs {
+			list-style: none;
+			padding: 0 0 @padding-large-vertical;
+
+			label {
+				color: red;
+			}
+		}
+		.hs-form-required {
+			display: none;
+		}
+	}
+}
