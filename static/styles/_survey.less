@@ -5,6 +5,22 @@
 body.survey:not(.other) {
 	.no-sidebar-page-body;
 
+	section.title .heading h1 {
+		font-size: 75px;
+		font-weight: 300;
+		padding: 55px 0 0;
+		text-align: center;
+
+		@media(max-width: @screen-sm) {
+			font-size: 55px;
+			line-height: 50px;
+		}
+		@media(max-width: @screen-xs) {
+			font-size: 35px;
+			line-height: 50px;
+		}
+	}
+
 	.hbspt-form {
 		.submitted-message {
 			font-size: @font-size-large;
