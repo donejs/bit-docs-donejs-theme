@@ -21,6 +21,29 @@ body.survey:not(.other) {
 		}
 	}
 
+	figure {
+		text-align: center;
+		figcaption {
+			margin-top: -20px;
+		}
+	}
+
+	.comment.survey-is-active {
+		.cta, .youtube-embed {
+			display: block;
+		}
+		.form-explanation {
+			display: none;
+		}
+	}
+
+	.cta {
+		display: none;
+		font-size: @font-size-large;
+		margin: 3 * @padding-large-vertical 0;
+		text-align: center;
+	}
+
 	.hbspt-form {
 		.submitted-message {
 			font-size: @font-size-large;
@@ -57,6 +80,20 @@ body.survey:not(.other) {
 		}
 		.hs-form-required {
 			display: none;
+		}
+	}
+
+	.youtube-embed {
+		display: none;
+		margin: 3 * @padding-large-vertical 0;
+		text-align: center;
+
+		iframe {
+			margin: 0;
+		}
+
+		p {
+			text-align: left;
 		}
 	}
 }
