@@ -1,0 +1,31 @@
+survey-ad {
+  background-color: @headerBackground;
+  box-shadow: 0px -3px 5px fade( #CCCCCC, 50% );
+  font-size: 1.5rem;
+  z-index: @table-of-contents-z-index - 1;// Display under the left nav
+
+  a {
+    color: inherit;
+  }
+
+  .close {
+    color: inherit;
+    cursor: pointer;
+    font-size: 2rem;
+  }
+  .close:hover {
+    background-color: transparent;
+  }
+
+  @supports (-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px)) {
+		-webkit-backdrop-filter: @headerBlur;
+		backdrop-filter: @headerBlur;
+  }
+}
+
+// Hide this component on mobile
+@media screen and (max-width: @contentWidth) {
+  survey-ad {
+    display: none;
+  }
+}
