@@ -6,8 +6,15 @@ header {
     height: auto;
   }
   .navbar-default{
-    background-color: rgba( 255, 255, 255, 0.87 );
+    background-color: @headerBackground;
     box-shadow: 0px 3px 5px fade( #CCCCCC, 50% );
+
+    @supports (-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px)) {
+  		-webkit-backdrop-filter: @headerBlur;
+  		-webkit-font-smoothing: subpixel-antialiased;
+  		backdrop-filter: @headerBlur;
+    }
+
   }
   .navbar-fixed-top {
     z-index: 1080;

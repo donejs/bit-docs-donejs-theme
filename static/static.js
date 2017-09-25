@@ -1,6 +1,7 @@
 var $ = require("jquery");
 var handlePageAnchors = require("./handle-page-anchors");
 var debounce = require('lodash.debounce');
+var SurveyAdControl = require("donejs-survey-ad");
 require("./js/collapse");
 require("./js/dropdown");
 require("./js/tooltip");
@@ -584,6 +585,14 @@ $(function() {
       }
     }, 200);
   }
+});
+
+// Survey ad code
+$(function() {
+  // Set up the survey ad control
+  var surveyAdControl = new SurveyAdControl("survey-ad");
+	// Notify the survey ad control that the user loaded a page
+	surveyAdControl.didEngage();
 });
 
 $("#bithub-events-embed").upcomingEvents({
