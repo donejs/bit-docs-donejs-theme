@@ -30,5 +30,10 @@
     "dotdotdot": "^1.7.0",
     "jquery": "2.2.4",
     "lodash.debounce": "^4.0.8"
+  },
+  "steal": {
+    "plugins": [
+      "can"
+    ]
   }
 }
