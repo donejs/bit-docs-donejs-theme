@@ -8,12 +8,10 @@ module.exports = function(bitDocs) {
   dependencies[pkg.name] = pkg.version;
 
   // add theme dependencies
-  assign(dependencies, pkg.dependencies);
+  //assign(dependencies, pkg.dependencies);
 
   bitDocs.register("html", {
     templates: path.join(__dirname, "templates"),
     dependencies: dependencies
   });
 };
-
-
