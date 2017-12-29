@@ -1,7 +1,7 @@
 var $ = require("jquery");
 var handlePageAnchors = require("./handle-page-anchors");
 var debounce = require('lodash.debounce');
-var SurveyAdControl = require("donejs-survey-ad");
+var SurveyAdControl = require("donejs-survey-ad").SurveyAd;
 require("./js/collapse");
 require("./js/dropdown");
 require("./js/tooltip");
