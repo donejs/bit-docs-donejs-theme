@@ -15,9 +15,9 @@ export const ViewModel = Map.extend({
       get: function() {
         let events = this.attr('events').serialize();
 
-        // Filter out recurring events (like the contributors meeting)
+        // Filter out cancelled & recurring events (like the contributors meeting)
         events = events.filter(function(event) {
-          return !event.recurringEventId;
+          return !event.recurringEventId && event.status !== "cancelled";
         });
 
         // The current installed version of can for this version of DocumentJS

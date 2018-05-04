@@ -17,6 +17,9 @@ export const ViewModel = Map.extend({
     eventDate: {
       get: function() {
         var start = this.attr('model.start');
+        if (!start || !start.attr) {
+          return '';
+        }
         var startDate = start.attr('date');
         var startDateTime = start.attr('dateTime');
         if (startDateTime) {
