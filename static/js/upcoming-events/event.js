@@ -15,6 +15,9 @@ export const Event = can.Model.extend({
     startTimestamp: {
       get: function() {
         var start = this.attr('start');
+        if (!start || !start.attr) {
+          return 0;
+        }
         var startDateTime = start.attr('dateTime') || start.attr('date');
         return moment(startDateTime).format('X');
       },
