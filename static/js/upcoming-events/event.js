@@ -1,10 +1,16 @@
 /* global moment */
-import can from 'can/';
-// import moment from 'moment'; // added global
-import 'can/model/';
-import 'can/map/define/';
-import 'can/list/promise/';
+import { connect } from "can";
 
+const eventConnection = connect(
+    [ connect.constructor, connect.dataUrl ],
+    { url: "https://www.googleapis.com/calendar/v3/calendars/{calendarId}/events?key={apiKey}" }
+);
+
+eventConnection.getList( {} ).then( function( events ) {
+  console.log(events);
+} );
+
+/*
 export const Event = can.Model.extend({
   findAll: 'GET https://www.googleapis.com/calendar/v3/calendars/{calendarId}/events?key={apiKey}',
   parseModels: function(data, xhr) {
@@ -27,3 +33,4 @@ export const Event = can.Model.extend({
 });
 
 export default Event;
+*/
