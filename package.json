@@ -1,6 +1,6 @@
 {
   "name": "bit-docs-donejs-theme",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "description": "DoneJS bit-docs theme",
   "main": "static/static",
   "scripts": {
@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/donejs/bit-docs-donejs-theme#readme",
   "devDependencies": {
-    "bit-docs-generate-html": "^0.3.6",
+    "bit-docs-generate-html": "^0.11.1",
     "fs-extra": "^2.0.0",
     "q": "^1.4.1"
   },
