@@ -9,7 +9,6 @@ require("./js/popover");
 require("./js/responsive-tables");
 require("./js/lazy-youtube");
 require("./js/affix");
-require("./js/upcoming-events/upcoming-events");
 require("./styles/styles.less!");
 
 
