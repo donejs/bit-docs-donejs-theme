@@ -9,7 +9,6 @@ require("./js/popover");
 require("./js/responsive-tables");
 require("./js/lazy-youtube");
 require("./js/affix");
-require("./js/upcoming-events/upcoming-events");
 require("./styles/styles.less!");
 
 
@@ -593,9 +592,4 @@ $(function() {
   var surveyAdControl = new SurveyAdControl("survey-ad");
 	// Notify the survey ad control that the user loaded a page
 	surveyAdControl.didEngage();
-});
-
-$("#bithub-events-embed").upcomingEvents({
-  apiKey: "AIzaSyBsNpdGbkTsqn1BCSPQrjO9OaMySjK5Sns",
-  calendarId: "jupiterjs.com_g27vck36nifbnqrgkctkoanqb4@group.calendar.google.com"
 });
