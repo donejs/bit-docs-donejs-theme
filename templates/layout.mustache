@@ -19,10 +19,30 @@
 	<meta charset="utf-8">
   <title>{{getTitle}}</title>
 	<meta name="google-site-verification" content="-E1_on_BhUFqVXxNgtGgNYF5FIJojlOksLPK8zdeiL8" />
-	<meta name="description" content="DoneJS is an open source JavaScript framework that makes it easy to build high performance, real time web and mobile applications.">
+	<meta name="description" content="{{getLinkTitle .}}">
 	<meta name="author" content="Bitovi - DoneJS">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:image" content="https://www.bitovi.com/hubfs/open-source/os-donejs.jpg">
+	<meta property="og:description" content="{{getLinkTitle .}}">
+	<meta property="og:title" content="{{getTitle}}">
+<script type="application/ld+json">
+		{
+			"@context": "http://www.schema.org",
+			"@type": "SoftwareSourceCode",
+			"applicationCategory": "DeveloperApplication",
+			"brand": "Bitovi",
+			"category": "JavaScript Frameworks",
+			"codeRepository": "https://github.com/donejs/donejs",
+			"description": "{{getLinkTitle .}}",
+			"image": "https://www.bitovi.com/hubfs/open-source/os-donejs.jpg",
+			"license": "https://github.com/donejs/donejs/blob/master/license.md",
+			"logo": "https://www.bitovi.com/hubfs/open-source/os-donejs.jpg",
+			"name": "{{getDocumentTitle .}}",
+			"programmingLanguage": "JavaScript",
+			"softwareVersion" : "3.2.0"
+		}
+	</script>
 	<link rel="apple-touch-icon" sizes="57x57" href="static/img/favicons/apple-touch-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="static/img/favicons/apple-touch-icon-60x60.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="static/img/favicons/apple-touch-icon-72x72.png">
