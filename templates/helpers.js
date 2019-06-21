@@ -19,7 +19,7 @@ module.exports = function(docMap, options, getCurrent, helpers, OtherHandlebars)
               return 'DoneJs';
           }
           return 'DoneJS - ' + title;
-        },
+        }
     };
 };
 
