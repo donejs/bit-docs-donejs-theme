@@ -16,16 +16,16 @@ generate(docMap, {
   html: {
     templates: path.join(__dirname, "templates"),
     dependencies: {
+      "bit-docs-donejs-theme": __dirname,
       "bit-docs-prettify": "^0.4.0",
       "bit-docs-html-highlight-line": "^0.5.4",
-      "bit-docs-donejs-theme": __dirname,
       "bit-docs-html-toc": "^0.6.2"
     }
   },
   dest: path.join(__dirname, "site"),
   parent: "donejs",
   forceBuild: process.argv.includes("-f"),
-  minifyBuild: true,
+  minifyBuild: false,
   debug: true
 })
 .then(function() {
