@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/donejs/bit-docs-donejs-theme#readme",
   "devDependencies": {
-    "bit-docs-generate-html": "^0.14.0",
+    "bit-docs-generate-html": "^0.15.0",
     "fs-extra": "^2.0.0",
     "q": "^1.4.1"
   },
